@@ -18,9 +18,9 @@ function Dashboard() {
       <input onChange={(e) => setTitle(e.target.value)}></input>
       <button onClick={() => searchForMovieHandler(title)}></button>
       <div className="small-info">
-        <p>Released: {results["Year"]}</p>
-        <p>Rating: {results["Rated"]}</p>
-        <p>Runtime: {results["Runtime"]}</p>
+        <p>Released: {results["Year"] ? results["Year"] : "???"}</p>
+        <p>Rating: {results["Rated"] ? results["Rated"] : "???"}</p>
+        <p>Runtime: {results["Runtime"] ? results["Runtime"] : "???"}</p>
       </div>
       <h1>{results["Title"]}</h1>
       <img src={results["Poster"]}></img>
@@ -29,9 +29,9 @@ function Dashboard() {
         <p>{results["Plot"]}</p>
       </div>
       <div className="credits">
-        <p>Director: {results["Director"]}</p>
-        <p>Writer: {results["Writer"]}</p>
-        <p>Actors: {results["Actors"]}</p>
+        <p>Director: {results["Director"] ? results["Director"] : "???"}</p>
+        <p>Writer: {results["Writer"] ? results["Writer"] : "???"}</p>
+        <p>Actors: {results["Actors"] ? results["Actors"] : "???"}</p>
       </div>
     </>
   );
