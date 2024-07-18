@@ -1,3 +1,5 @@
+import API_KEY from "./env";
+
 import { useState } from "react";
 
 function Dashboard() {
@@ -15,18 +17,18 @@ function Dashboard() {
     <>
       <input onChange={(e) => setTitle(e.target.value)}></input>
       <button onClick={() => searchForMovieHandler(title)}></button>
-      <div class="small-info">
+      <div className="small-info">
         <p>Released: {results["Year"]}</p>
         <p>Rating: {results["Rated"]}</p>
         <p>Runtime: {results["Runtime"]}</p>
       </div>
       <h1>{results["Title"]}</h1>
       <img src={results["Poster"]}></img>
-      <div class="large-info">
+      <div className="large-info">
         <p>{results["Genre"]}</p>
         <p>{results["Plot"]}</p>
       </div>
-      <div class="credits">
+      <div className="credits">
         <p>Director: {results["Director"]}</p>
         <p>Writer: {results["Writer"]}</p>
         <p>Actors: {results["Actors"]}</p>
@@ -37,7 +39,7 @@ function Dashboard() {
 
 async function searchForMovie(title) {
   const response = await fetch(
-    "http://www.omdbapi.com/?apikey=1ff93909&t=" + title,
+    "http://www.omdbapi.com/?apikey=" + API_KEY + "&t=" + title,
   );
   return response.json();
 }
