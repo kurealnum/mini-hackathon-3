@@ -35,9 +35,16 @@ function Dashboard() {
         </div>
       </div>
       <div className="credits">
-        <p>Director: {results["Director"] ? results["Director"] : "???"}</p>
-        <p>Writer: {results["Writer"] ? results["Writer"] : "???"}</p>
-        <p>Actors: {results["Actors"] ? results["Actors"] : "???"}</p>
+        <p>
+          <span>Director:</span>{" "}
+          {results["Director"] ? results["Director"] : "???"}
+        </p>
+        <p>
+          <span>Writer:</span> {results["Writer"] ? results["Writer"] : "???"}
+        </p>
+        <p>
+          <span>Actors:</span> {results["Actors"] ? results["Actors"] : "???"}
+        </p>
       </div>
     </>
   );
